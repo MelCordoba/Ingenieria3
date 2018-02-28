@@ -1,0 +1,11 @@
+<footer class="container-fluid text-center">
+    <div class="container" align="center">
+        <div class="row"></div>
+    </div>
+    <div class="mastfoot">
+        <div class="inner">
+            <br><br><br>
+            <p>© 2017 SIMUTE</p>
+        </div>
+    </div>
+</footer>

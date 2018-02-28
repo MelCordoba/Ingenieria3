@@ -1,0 +1,10 @@
+ .navbar{margin-bottom: 0.5;border-radius: 0;padding: 0;background-color:#035796;}
+ *{font-family: 'Roboto', sans-serif;}
+ .modal-backdrop.in{filter: alpha(opacity=50);opacity: .8;}
+ .modal-content{background-color: #ececec;border: 1px solid #bdc3c7;outline: 0;}
+ .modal-footer{text-align: center;}
+ .blue{color: #035796;}
+ #i_idespoLogo{height: 80px; width: 150px;}
+ #i_unaLogo{height: 70px; width: 95px;}
+ .subheader{width: 90%;}
+ #f_fileSelector{display:none};

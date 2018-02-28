@@ -1,0 +1,14 @@
+<link rel="Shorcut Icon" type="image/x-icon" href="img/unaHeader.jpg"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" title="pink" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" title="pink" type="text/css" href="css/font-awesome.min.css">
+<link rel="stylesheet" title="pink" type="text/css" href="css/IndexStyle.css">	
+<script type="text/javascript" src="js/Jquery.min.3.2.1.js"></script>
+<script type="text/javascript" src="js/Bootstrap.min.js"></script>
+<script type="text/javascript" src="js/Proxy.js"></script>
+<script type="text/javascript" src="js/JsonUtils.js"></script>
+<script type="text/javascript" src="js/Proxy.js"></script>
+<script type="text/javascript" src="js/Entidades/NumeroTelefonico.js"></script>
+<script type="text/javascript" src="js/Entidades/Usuario.js"></script>
+

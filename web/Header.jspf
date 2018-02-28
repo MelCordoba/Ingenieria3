@@ -1,0 +1,208 @@
+<%@page import="SIMUTE.model.Usuario"%>
+<%@ page pageEncoding="UTF-8" %>
+
+<% Usuario user = (Usuario) request.getSession().getAttribute("user"); %>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Desplegar navegación</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+<%if (user == null) {%>
+        <a class="navbar-brand" href="Login.jsp">SIMUTE</a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"><b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Ayuda</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Acerca de nosotros</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+<%}%>
+<%if (user != null && user.getRol() == 1) {//ADMINISTRADOR%>    
+        <a class="navbar-brand" href="index.jsp">SIMUTE</a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="index.jsp"><span class="glyphicon glyphicon-home"></a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administrador<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="CargarBase.jsp">Importar archivo a base de datos</a></li>
+                    <li class="divider"></li>
+                    <li><a href="GenerarMuestra.jsp">Generar Muestra</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Mensajes</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Supervisor<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="Perfil.html">Mi perfil</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Mis ofertas</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Mensajes</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Encuestador<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="Perfil.html">Mi perfil</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Mis ofertas</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Mensajes</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reportes<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="Perfil.html">Mi perfil</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Mis ofertas</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Mensajes</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <!---<li><a href="Login.html" role="button" data-toggle="modal" data-target="#login-modal">Inicicar sesión</a></li>!-->
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-user"></span> Administrador: <%=" " + user.getNombre()%><b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"> Mi Perfil</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" onclick="logout();return false;"><span class="glyphicon glyphicon-log-out"></span>Cerrar Sesión</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"><b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Ayuda</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Acerca de nosotros</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+<%}%>
+<%if (user != null && user.getRol() == 2) {//SUPERVISOR%>
+        <a class="navbar-brand" href="index.jsp">SIMUTE</a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="index.jsp"><span class="glyphicon glyphicon-home"></a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Supervisor<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="Perfil.html">Mi perfil</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Mis ofertas</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Mensajes</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Encuestador<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="Perfil.html">Mi perfil</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Mis ofertas</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Mensajes</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reportes<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="Perfil.html">Mi perfil</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Mis ofertas</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Mensajes</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <!---<li><a href="Login.html" role="button" data-toggle="modal" data-target="#login-modal">Inicicar sesión</a></li>!-->
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-user"></span> Supervisor: <%=user.getNombre()%><b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"> Mi Perfil</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" onclick="logout();return false;"><span class="glyphicon glyphicon-log-out"></span>Cerrar Sesión</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"><b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Ayuda</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Acerca de nosotros</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+<%}%>
+<%if (user != null && user.getRol() == 3) {//ENCUESTADOR%>
+        <a class="navbar-brand" href="index.jsp">SIMUTE</a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="index.jsp"><span class="glyphicon glyphicon-home"></a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Encuestador<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="Perfil.html">Mi perfil</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Mis ofertas</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Mensajes</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <!---<li><a href="Login.html" role="button" data-toggle="modal" data-target="#login-modal">Inicicar sesión</a></li>!-->
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-user"></span> Encuestador: <%=user.getNombre()%><b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"> Mi Perfil</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" onclick="logout();return false;"><span class="glyphicon glyphicon-log-out"></span>Cerrar Sesión</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"><b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Ayuda</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Acerca de nosotros</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+<%}%>
+</nav>
+<script>
+    function logout() {
+        Proxy.userLogout(
+            function () {
+                document.location = "/SIMUTE/Login.jsp";
+            }
+        );
+    }
+</script>
