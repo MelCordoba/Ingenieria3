@@ -13,8 +13,7 @@ create table Usuario(
 ) ENGINE = InnoDB;
 
 create table Poblacion(
-		id_Poblacion int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-		NumeroTelefono varchar(30) NOT NULL, 
+		NumeroTelefono varchar(30) NOT NULL PRIMARY KEY, 
 		Provincia int NOT NULL,
 		Canton int NOT NULL, 
 		Distrito int NOT NULL
@@ -24,11 +23,9 @@ create table SolicitudMuestra(
 		id_SolicitudMuestra int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 		NombreMuestra varchar(50),
 		Cantidad int,
-		Fecha date,
-		CedulaUsuario varchar(30),
-		CONSTRAINT FK_Usuario FOREIGN KEY (CedulaUsuario) REFERENCES Usuario (Cedula)
-		ON DELETE CASCADE
-		ON UPDATE RESTRICT
+		FechaCreacion date,
+		FechaInicio date
+	
 ) ENGINE = InnoDB;
 
 create table Muestra(
