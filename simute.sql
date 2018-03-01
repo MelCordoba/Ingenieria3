@@ -20,7 +20,7 @@ create table Poblacion(
 ) ENGINE = InnoDB;
 
 create table SolicitudMuestra(
-		id_SolicitudMuestra int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+		id_SolicitudMuestra int NOT NULL PRIMARY KEY,
 		NombreMuestra varchar(50),
 		Cantidad int,
 		FechaCreacion date,
